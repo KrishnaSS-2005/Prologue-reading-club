@@ -34,11 +34,18 @@ body {
 img { max-width: 100%; display: block; }
 
 .container {
-  width: 100%;
+  width: 80%;
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 24px;
 }
+.logo-symbol{
+   width:60px;
+   height:60px;
+   border-radius:50%;
+   box_shadow:0 4px 12px rgba(0,0,0,0.15);
+   object-fit:cover;
+}S
 
 h1, h2, h3 {
   font-family: var(--font-head);
