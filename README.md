@@ -62,7 +62,7 @@ No build tools or dependencies are required.
    python3 -m http.server 8000
    ```
 
-## ☁️ Deploying to GitHub Pages
+## ☁️ Deploying to GitHub Pages  
 
 1. Create a new GitHub repository and push this folder's contents to the `main` branch:
    ```bash
