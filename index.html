@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PROLOGUE — The Reading Club of LBSITW</title>
+<meta name="description" content="PROLOGUE is the official reading club of LBSITW. Discover activities, events, and become a member." />
+
+<link rel="icon" href="assets/logo.jpeg" type="image/jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner container">
+    <a href="#home" class="brand">
+      <img src="assets/logo.jpeg" alt="PROLOGUE logo" class="brand-logo" />
+      <span class="brand-text">PROLOGUE</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#why-join" class="nav-link">Why Join</a>
+      <a href="#activities" class="nav-link">Activities</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#membership" class="nav-link btn btn-small">Join Now</a>
+    </nav>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HOME / HERO ============ -->
+<section id="home" class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">The Reading Club of LBSITW</p>
+    <h1>Turning Pages,<br>Turning <span class="accent">Minds.</span></h1>
+    <p class="hero-sub">
+      PROLOGUE brings together readers, writers, dreamers and storytellers at LBSITW.
+      One club, endless chapters — join us as we explore worlds, one book at a time.
+    </p>
+    <div class="hero-actions">
+      <a href="#membership" class="btn btn-primary">Become a Member</a>
+      <a href="#activities" class="btn btn-outline">Explore Activities</a>
+    </div>
+
+    <div class="hero-ticker">
+      <span class="ticker-label">📅 Up Next:</span>
+      <span id="tickerText">Loading upcoming activity…</span>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">↓</a>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section class="stats-strip">
+  <div class="container stats-grid">
+    <div class="stat">
+      <span class="stat-number" data-target="120">0</span><span class="stat-suffix">+</span>
+      <p>Members</p>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="45">0</span><span class="stat-suffix">+</span>
+      <p>Books Discussed</p>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="18">0</span><span class="stat-suffix">+</span>
+      <p>Events Hosted</p>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="3">0</span>
+      <p>Years Active</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="assets/logo.jpeg" alt="PROLOGUE club emblem" />
+    </div>
+    <div class="about-text">
+      <p class="section-label">About Us</p>
+      <h2>The Story Behind <span class="accent">PROLOGUE</span></h2>
+      <p>
+        PROLOGUE is the official reading club of LBSITW — a space founded by
+        students who believe that every great idea, movement and friendship
+        begins with a single page. What started as a small circle of book
+        lovers has grown into a vibrant community of readers, writers and thinkers.
+      </p>
+
+      <div class="vm-cards">
+        <div class="vm-card">
+          <h3>🎯 Our Vision</h3>
+          <p>To cultivate a lifelong love for reading and meaningful conversation within the LBSITW community.</p>
+        </div>
+        <div class="vm-card">
+          <h3>🌱 Our Purpose</h3>
+          <p>To create a safe, welcoming space where students explore literature, share ideas, and grow as storytellers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY JOIN ============ -->
+<section id="why-join" class="section section-alt">
+  <div class="container">
+    <p class="section-label center">Why Join</p>
+    <h2 class="center">Benefits of Being a <span class="accent">Prologue Member</span></h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">📚</div>
+        <h3>Curated Reading Lists</h3>
+        <p>Access hand-picked reading lists across genres, from classics to contemporary fiction.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🗣️</div>
+        <h3>Public Speaking</h3>
+        <p>Sharpen your voice through discussions, debates, and open-mic storytelling sessions.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>A Community That Reads</h3>
+        <p>Meet like-minded peers, seniors and mentors who share your love for stories.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏆</div>
+        <h3>Certificates &amp; Recognition</h3>
+        <p>Earn certificates for participation, leadership roles, and organized events.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✍️</div>
+        <h3>Writing Opportunities</h3>
+        <p>Get published in the club newsletter and pitch your own creative projects.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎤</div>
+        <h3>Meet Authors &amp; Speakers</h3>
+        <p>Interact with guest authors, poets and industry speakers at exclusive sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITIES ============ -->
+<section id="activities" class="section">
+  <div class="container">
+    <p class="section-label center">What We Do</p>
+    <h2 class="center">Club <span class="accent">Activities</span></h2>
+
+    <div class="activities-grid">
+      <div class="activity-card">
+        <span class="activity-tag">Weekly</span>
+        <h3>📖 Book Discussions</h3>
+        <p>Deep-dive sessions on a chosen book of the month, with open debate and reflection.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-tag">Monthly</span>
+        <h3>🎭 Author Meet & Greets</h3>
+        <p>Conversations with published authors, poets and campus writers.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-tag">Monthly</span>
+        <h3>✒️ Writing Workshops</h3>
+        <p>Hands-on sessions on short fiction, poetry, journaling and blogging.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-tag">Ongoing</span>
+        <h3>🎙️ Open Mic Nights</h3>
+        <p>An open stage for poetry, spoken word and storytelling — no experience needed.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-tag">Quarterly</span>
+        <h3>📰 Newsletter Team</h3>
+        <p>Student-run publication covering reviews, interviews and campus literary news.</p>
+      </div>
+      <div class="activity-card">
+        <span class="activity-tag">Annual</span>
+        <h3>🏕️ Reading Retreats</h3>
+        <p>An off-campus day of reading, journaling, and unplugged reflection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section id="events" class="section section-alt">
+  <div class="container">
+    <p class="section-label center">Mark Your Calendar</p>
+    <h2 class="center">Upcoming &amp; Past <span class="accent">Events</span></h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+      <button class="tab-btn" data-tab="past">Past</button>
+    </div>
+
+    <div class="tab-panel active" id="upcoming">
+      <div class="event-card">
+        <div class="event-date"><span>14</span>OCT</div>
+        <div class="event-info">
+          <h3>Book of the Month: "The Midnight Library"</h3>
+          <p>Discussion circle · Seminar Hall · 3:30 PM</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span>02</span>NOV</div>
+        <div class="event-info">
+          <h3>Open Mic Night — Prose &amp; Poetry</h3>
+          <p>Auditorium · 5:00 PM</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span>20</span>NOV</div>
+        <div class="event-info">
+          <h3>Guest Talk: Local Author on Campus Fiction</h3>
+          <p>Conference Room · 2:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="past">
+      <div class="event-card">
+        <div class="event-date"><span>18</span>AUG</div>
+        <div class="event-info">
+          <h3>PROLOGUE Induction Meet 2026</h3>
+          <p>Welcomed 60+ new members to the club.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span>05</span>JUL</div>
+        <div class="event-info">
+          <h3>Writing Workshop: Flash Fiction</h3>
+          <p>Hands-on session with 40 participants.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span>22</span>MAR</div>
+        <div class="event-info">
+          <h3>World Poetry Day Celebration</h3>
+          <p>Open mic + poetry wall installation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="section">
+  <div class="container">
+    <p class="section-label center">Moments</p>
+    <h2 class="center">Club <span class="accent">Gallery</span></h2>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <img src="https://picsum.photos/id/24/600/450" alt="Reading session" data-index="0" />
+      <img src="https://picsum.photos/id/28/600/450" alt="Open mic night" data-index="1" />
+      <img src="https://picsum.photos/id/36/600/450" alt="Writing workshop" data-index="2" />
+      <img src="https://picsum.photos/id/48/600/450" alt="Author meet" data-index="3" />
+      <img src="https://picsum.photos/id/60/600/450" alt="Book discussion circle" data-index="4" />
+      <img src="https://picsum.photos/id/96/600/450" alt="Club members group photo" data-index="5" />
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+  <img src="" alt="" id="lightboxImg" />
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+</div>
+
+<!-- ============ MEMBERSHIP REGISTRATION ============ -->
+<section id="membership" class="section section-alt">
+  <div class="container form-wrap">
+    <p class="section-label center">Join Us</p>
+    <h2 class="center">Membership <span class="accent">Registration</span></h2>
+    <p class="center form-intro">Fill in your details below. It takes less than two minutes.</p>
+
+    <form id="membershipForm" novalidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your full name" />
+          <span class="error-msg" id="err-fullName"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="regNo">Register Number *</label>
+          <input type="text" id="regNo" name="regNo" placeholder="e.g. LBS23CS045" />
+          <span class="error-msg" id="err-regNo"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department *</label>
+          <select id="department" name="department">
+            <option value="">Select department</option>
+            <option>Computer Science</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+            <option>Electrical</option>
+            <option>Other</option>
+          </select>
+          <span class="error-msg" id="err-department"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year of Study *</label>
+          <select id="year" name="year">
+            <option value="">Select year</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+          </select>
+          <span class="error-msg" id="err-year"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+          <span class="error-msg" id="err-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" />
+          <span class="error-msg" id="err-phone"></span>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="why">Why do you want to join PROLOGUE? *</label>
+        <textarea id="why" name="why" rows="4" placeholder="Tell us a little about yourself…"></textarea>
+        <span class="error-msg" id="err-why"></span>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Preferred Activities</label>
+        <div class="checkbox-row">
+          <label><input type="checkbox" name="interest" value="Book Discussions"> Book Discussions</label>
+          <label><input type="checkbox" name="interest" value="Writing Workshops"> Writing Workshops</label>
+          <label><input type="checkbox" name="interest" value="Open Mic"> Open Mic</label>
+          <label><input type="checkbox" name="interest" value="Newsletter"> Newsletter Team</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width agree-row">
+        <label class="agree-label">
+          <input type="checkbox" id="agree" name="agree" />
+          I agree to follow the PROLOGUE code of conduct *
+        </label>
+        <span class="error-msg" id="err-agree"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+
+      <p class="form-success" id="formSuccess" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT & SOCIALS ============ -->
+<footer id="contact" class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo.jpeg" alt="PROLOGUE logo" class="footer-logo" />
+      <p>PROLOGUE — The Reading Club of LBSITW. Turning pages, turning minds, one chapter at a time.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 LBS Institute of Technology for Women, Poojappura, Trivandrum</p>
+      <p>✉️ prologue.lbsitw@gmail.com</p>
+      <p>📞 +91 98765 43210</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#activities">Activities</a>
+      <a href="#events">Events</a>
+      <a href="#membership">Membership</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Follow the Journey</h4>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.05 2 .25 2.7.5.7.3 1.3.7 1.9 1.3.6.6 1 1.2 1.3 1.9.25.7.45 1.5.5 2.7.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.05 1.2-.25 2-.5 2.7-.3.7-.7 1.3-1.3 1.9-.6.6-1.2 1-1.9 1.3-.7.25-1.5.45-2.7.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.05-2-.25-2.7-.5-.7-.3-1.3-.7-1.9-1.3-.6-.6-1-1.2-1.3-1.9-.25-.7-.45-1.5-.5-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.05-1.2.25-2 .5-2.7.3-.7.7-1.3 1.3-1.9.6-.6 1.2-1 1.9-1.3.7-.25 1.5-.45 2.7-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.1-1 .04-1.55.22-1.9.35-.48.19-.82.4-1.18.76-.36.36-.57.7-.76 1.18-.14.35-.31.9-.35 1.9C3 9.28 3 9.65 3 12.8s0 3.52.1 4.76c.04 1 .22 1.55.35 1.9.19.48.4.82.76 1.18.36.36.7.57 1.18.76.35.14.9.31 1.9.35 1.24.1 1.61.1 4.76.1s3.52 0 4.76-.1c1-.04 1.55-.22 1.9-.35.48-.19.82-.4 1.18-.76.36-.36.57-.7.76-1.18.14-.35.31-.9.35-1.9.1-1.24.1-1.61.1-4.76s0-3.52-.1-4.76c-.04-1-.22-1.55-.35-1.9a3.17 3.17 0 0 0-.76-1.18 3.17 3.17 0 0 0-1.18-.76c-.35-.14-.9-.31-1.9-.35C15.52 4 15.15 4 12 4zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zm5.7-2a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M13.5 21.9v-8.4h2.8l.4-3.3h-3.2V8.1c0-.95.27-1.6 1.63-1.6h1.74V3.5C16.25 3.4 15.24 3.3 14.06 3.3c-2.46 0-4.14 1.5-4.14 4.26v2.6H7.1v3.3h2.82v8.4h3.58z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M3 3l7.6 10.2L3.2 21h2.3l6.4-6.9L17 21H21l-8-10.7L20.6 3h-2.3l-5.9 6.4L8 3H3zm3.3 1.7h2.1l9.3 12.6h-2.1L6.3 4.7z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M22 8.4s-.2-1.5-.8-2.2c-.8-.8-1.7-.8-2.1-.9C16.4 5 12 5 12 5s-4.4 0-7.1.3c-.4 0-1.3.1-2.1.9C2.2 6.9 2 8.4 2 8.4S1.8 10.2 1.8 12v1.9c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.8.9 1.9.8 2.4.9 1.7.2 7.3.3 7.3.3s4.4 0 7.1-.3c.4 0 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6V12c0-1.8-.2-3.6-.2-3.6zM9.9 15.3V8.7l6 3.3-6 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>© 2026 PROLOGUE — LBSITW. All rights reserved.</p>
+    <p>Built with 📖 by the PROLOGUE Tech Team.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
