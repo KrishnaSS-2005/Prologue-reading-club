@@ -91,4 +91,4 @@ No build tools or dependencies are required.
 
 **Name:** Krishna S S
 **GitHub Repository:** https://github.com/KrishnaSS-2005/Prologue-reading-club
-**Live Website (GitHub Pages):** _(fill in link)_
+**Live Website (GitHub Pages):** https://krishnass-2005.github.io/Prologue-reading-club/
