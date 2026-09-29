@@ -3,7 +3,7 @@
 A responsive, single-page website for **PROLOGUE**, the official reading club of LBSITW, built for the Tech Team selection task.
 
 ## 🔗 Live Site
-Live Website (GitHub Pages): `https://<your-username>.github.io/<your-repo-name>/`
+Live Website (GitHub Pages): https://github.com/KrishnaSS-2005/Prologue-reading-club
 
 ## 🖥️ Overview
 
@@ -70,13 +70,13 @@ No build tools or dependencies are required.
    git add .
    git commit -m "Initial commit: PROLOGUE reading club website"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+   git remote add origin https://github.com/KrishnaSS-2005/Prologue-reading-club
    git push -u origin main
    ```
 2. In the repository, go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to `Deploy from a branch`, branch `main`, folder `/ (root)`.
 4. Save — GitHub will publish the site at:
-   `https://<your-username>.github.io/<your-repo-name>/`
+   https://krishnass-2005.github.io/Prologue-reading-club/
 
 ## ✅ Requirements Checklist
 
