@@ -163,12 +163,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxClose = document.getElementById("lightboxClose");
   const lightboxPrev = document.getElementById("lightboxPrev");
   const lightboxNext = document.getElementById("lightboxNext");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const journalForm = document.getElementById("journalForm");
+  const journalName = document.getElementById("journalName");
+  const journalText = document.getElementById("journalText");
+  const journalStatus = document.getElementById("journalStatus");
+  const journalEntries = document.getElementById("journalEntries");
+  const JOURNAL_STORAGE_KEY = "prologueReadingJournals";
   let currentImgIndex = 0;
+
+  const readJournals = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(JOURNAL_STORAGE_KEY) || "[]");
+      return Array.isArray(saved) ? saved : [];
+    } catch (error) {
+      return [];
+    }
+  };
+
+  const writeJournals = (journals) => {
+    try { localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(journals)); } catch (error) { /* local-only enhancement */ }
+  };
+
+  const renderJournal = () => {
+    if (!journalEntries || !lightboxCaption) return;
+    const photoKey = galleryImgs[currentImgIndex]?.getAttribute("src") || "";
+    const currentJournals = readJournals().filter((entry) => entry.photo === photoKey);
+    lightboxCaption.textContent = galleryImgs[currentImgIndex]?.alt || "Reading moment";
+    journalEntries.innerHTML = "";
+    if (!currentJournals.length) {
+      journalEntries.innerHTML = '<p class="journal-empty">Be the first reader to leave a line here.</p>';
+      return;
+    }
+    currentJournals.slice().reverse().forEach((entry) => {
+      const card = document.createElement("article");
+      card.className = "journal-entry";
+      const head = document.createElement("div");
+      head.className = "journal-entry-head";
+      const name = document.createElement("strong");
+      name.textContent = entry.name;
+      const date = document.createElement("time");
+      date.textContent = entry.date;
+      const text = document.createElement("p");
+      text.textContent = entry.text;
+      head.append(name, date);
+      card.append(head, text);
+      journalEntries.appendChild(card);
+    });
+  };
 
   const openLightbox = (index) => {
     currentImgIndex = index;
     lightboxImg.src = galleryImgs[index].src;
     lightboxImg.alt = galleryImgs[index].alt;
+    if (journalStatus) journalStatus.textContent = "";
+    if (journalStatus) journalStatus.classList.remove("error");
+    if (journalForm) journalForm.reset();
+    renderJournal();
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
   };
@@ -182,6 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
     currentImgIndex = (currentImgIndex + delta + galleryImgs.length) % galleryImgs.length;
     lightboxImg.src = galleryImgs[currentImgIndex].src;
     lightboxImg.alt = galleryImgs[currentImgIndex].alt;
+    if (journalStatus) journalStatus.textContent = "";
+    if (journalStatus) journalStatus.classList.remove("error");
+    if (journalForm) journalForm.reset();
+    renderJournal();
   };
 
   galleryImgs.forEach((img, index) => {
@@ -199,6 +254,29 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowLeft") showImage(-1);
     if (e.key === "ArrowRight") showImage(1);
+  });
+
+  journalForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = journalName.value.trim();
+    const text = journalText.value.trim();
+    if (name.length < 2 || text.length < 5) {
+      journalStatus.textContent = "Add your name and a few thoughtful words first.";
+      journalStatus.classList.add("error");
+      return;
+    }
+    const journals = readJournals();
+    journals.push({
+      photo: galleryImgs[currentImgIndex].getAttribute("src") || "",
+      name,
+      text,
+      date: new Date().toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }),
+    });
+    writeJournals(journals);
+    journalForm.reset();
+    journalStatus.textContent = "Your reflection is tucked into this page.";
+    journalStatus.classList.remove("error");
+    renderJournal();
   });
 
   /* ---------- Membership form validation ---------- */
