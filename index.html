@@ -6,20 +6,33 @@
 <title>PROLOGUE — The Reading Club of LBSITW</title>
 <meta name="description" content="PROLOGUE is the official reading club of LBSITW. Discover activities, events, and become a member." />
 
-<link rel="icon" href="logo.jpeg" type="image/jpeg" />
+<link rel="icon" href="assets/logo.jpeg" type="image/jpeg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<!-- ============ PROLOGUE INTRO ============ -->
+<div class="intro-screen" id="introScreen">
+  <div class="intro-book" aria-hidden="true"><span></span></div>
+  <p class="intro-kicker">THE READING CLUB OF LBSITW</p>
+  <h1>PROLOGUE</h1>
+  <p class="intro-line">Every story begins with a page.</p>
+  <div class="intro-actions">
+    <button class="intro-enter" id="enterPrologue">Enter PROLOGUE <span>→</span></button>
+    <button class="intro-skip" id="skipIntro">Skip Intro</button>
+  </div>
+  <div class="intro-progress"><span></span></div>
+</div>
+
 
 <!-- ============ HEADER / NAV ============ -->
 <header class="site-header" id="siteHeader">
   <div class="nav-inner container">
     <a href="#home" class="brand">
-      <img src="logo.jpeg" alt="PROLOGUE logo" class="brand-logo" />
+      <img src="assets/logo.jpeg" alt="PROLOGUE logo" class="brand-logo" />
       <span class="brand-text">PROLOGUE</span>
     </a>
 
@@ -28,11 +41,14 @@
       <a href="#about" class="nav-link">About</a>
       <a href="#why-join" class="nav-link">Why Join</a>
       <a href="#activities" class="nav-link">Activities</a>
+      <a href="#library" class="nav-link">Library</a>
       <a href="#events" class="nav-link">Events</a>
       <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#contact" class="nav-link">Contact</a>
       <a href="#membership" class="nav-link btn btn-small">Join Now</a>
     </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode"><span>☾</span><span class="theme-label">Dark</span></button>
 
     <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -89,7 +105,7 @@
 <section id="about" class="section">
   <div class="container about-grid">
     <div class="about-media">
-      <img src="logo.jpeg" alt="PROLOGUE club emblem" />
+      <img src="assets/logo.jpeg" alt="PROLOGUE club emblem" />
     </div>
     <div class="about-text">
       <p class="section-label">About Us</p>
@@ -197,8 +213,116 @@
   </div>
 </section>
 
+<!-- ============ LIBRARY ============ -->
+<section id="library" class="section section-alt">
+  <div class="container">
+    <p class="section-label center">Recommended Reads</p>
+    <h2 class="center">The PROLOGUE <span class="accent">Library</span></h2>
+    <p class="center form-intro">Choose a language and your favourite genre, then explore a book. Preview it first or open a reading source.</p>
+
+    <div class="library-filters" aria-label="Library filters">
+      <div class="filter-group">
+        <span class="filter-title">Language</span>
+        <button class="filter-btn active" data-filter-group="language" data-filter="all">All</button>
+        <button class="filter-btn" data-filter-group="language" data-filter="english">English</button>
+        <button class="filter-btn" data-filter-group="language" data-filter="malayalam">മലയാളം</button>
+        <button class="filter-btn" data-filter-group="language" data-filter="hindi">हिन्दी</button>
+      </div>
+      <div class="filter-group">
+        <span class="filter-title">Favourite Genre</span>
+        <button class="filter-btn active" data-filter-group="genre" data-filter="all">All Genres</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="fiction">Fiction</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="romance">Romance</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="self-help">Self-help</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="history">History</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="mystery">Mystery</button>
+        <button class="filter-btn" data-filter-group="genre" data-filter="poetry">Poetry</button>
+      </div>
+    </div>
+
+    <div class="library-empty" id="libraryEmpty">No books match these filters yet. Try another language or genre.</div>
+
+    <div class="library-grid" id="libraryGrid">
+      <article class="book-card" data-language="english" data-genre="fiction">
+        <div class="book-cover cover-midnight">📘</div><span class="book-tag">English · Fiction</span>
+        <h3>The Midnight Library</h3><p class="book-author">Matt Haig</p>
+        <p class="book-blurb">A novel about choices, possibilities and a life well lived.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:The+Midnight+Library+inauthor:Matt+Haig">Preview</button><a href="https://openlibrary.org/search?q=The+Midnight+Library+Matt+Haig" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="english" data-genre="self-help">
+        <div class="book-cover cover-atomic">📗</div><span class="book-tag">English · Self-help</span>
+        <h3>Atomic Habits</h3><p class="book-author">James Clear</p>
+        <p class="book-blurb">A practical guide to building better habits through small changes.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:Atomic+Habits+inauthor:James+Clear">Preview</button><a href="https://openlibrary.org/search?q=Atomic+Habits+James+Clear" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="english" data-genre="romance">
+        <div class="book-cover cover-pride">📕</div><span class="book-tag">English · Romance</span>
+        <h3>Pride and Prejudice</h3><p class="book-author">Jane Austen</p>
+        <p class="book-blurb">Wit, romance and social observation in a classic English novel.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:Pride+and+Prejudice+inauthor:Jane+Austen">Preview</button><a href="https://openlibrary.org/search?q=Pride+and+Prejudice+Jane+Austen" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="english" data-genre="history">
+        <div class="book-cover cover-sapiens">📔</div><span class="book-tag">English · History</span>
+        <h3>Sapiens</h3><p class="book-author">Yuval Noah Harari</p>
+        <p class="book-blurb">A broad journey through human history and civilisation.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:Sapiens+inauthor:Yuval+Noah+Harari">Preview</button><a href="https://openlibrary.org/search?q=Sapiens+Yuval+Noah+Harari" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="malayalam" data-genre="fiction">
+        <div class="book-cover cover-malayalam">📗</div><span class="book-tag">മലയാളം · Fiction</span>
+        <h3>രണ്ടാമൂഴം</h3><p class="book-author">എം. ടി. വാസുദേവൻ നായർ</p>
+        <p class="book-blurb">A celebrated Malayalam literary retelling told through Bhima's perspective.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:%E0%B4%B0%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BE%E0%B4%AE%E0%B5%82%E0%B4%B4%E0%B4%82">Preview</button><a href="https://openlibrary.org/search?q=%E0%B4%B0%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BE%E0%B4%AE%E0%B5%82%E0%B4%B4%E0%B4%82" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="malayalam" data-genre="romance">
+        <div class="book-cover cover-malayalam2">🌿</div><span class="book-tag">മലയാളം · Romance</span>
+        <h3>മയ്യഴിപ്പുഴയുടെ തീരങ്ങളിൽ</h3><p class="book-author">എം. മുകുന്ദൻ</p>
+        <p class="book-blurb">A landmark Malayalam novel filled with memory, love and place.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:%E0%B4%AE%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%B4%E0%B4%BF%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B4%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86+%E0%B4%A4%E0%B5%80%E0%B4%B0%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B4%B3%E0%B4%BF%E0%B5%BD">Preview</button><a href="https://openlibrary.org/search?q=%E0%B4%AE%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%B4%E0%B4%BF%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B4%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86+%E0%B4%A4%E0%B5%80%E0%B4%B0%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B4%B3%E0%B4%BF%E0%B5%BD" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="hindi" data-genre="fiction">
+        <div class="book-cover cover-hindi">📙</div><span class="book-tag">हिन्दी · Fiction</span>
+        <h3>गोदान</h3><p class="book-author">मुंशी प्रेमचंद</p>
+        <p class="book-blurb">A landmark Hindi novel exploring rural life, society and human struggle.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:%E0%A4%97%E0%A5%8B%E0%A4%A6%E0%A4%BE%E0%A4%A8+inauthor:%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6">Preview</button><a href="https://openlibrary.org/search?q=%E0%A4%97%E0%A5%8B%E0%A4%A6%E0%A4%BE%E0%A4%A8+Premchand" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="hindi" data-genre="poetry">
+        <div class="book-cover cover-poetry">🪶</div><span class="book-tag">हिन्दी · Poetry</span>
+        <h3>मधुशाला</h3><p class="book-author">हरिवंश राय बच्चन</p>
+        <p class="book-blurb">A celebrated Hindi poetry collection built around the metaphor of the tavern.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:%E0%A4%AE%E0%A4%A7%E0%A5%81%E0%A4%B6%E0%A4%BE%E0%A4%B2%E0%A4%BE">Preview</button><a href="https://openlibrary.org/search?q=%E0%A4%AE%E0%A4%A7%E0%A5%81%E0%A4%B6%E0%A4%BE%E0%A4%B2%E0%A4%BE" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+      <article class="book-card" data-language="hindi" data-genre="mystery">
+        <div class="book-cover cover-mystery">🔍</div><span class="book-tag">हिन्दी · Mystery</span>
+        <h3>चंद्रकांता</h3><p class="book-author">देवकीनंदन खत्री</p>
+        <p class="book-blurb">A classic Hindi fantasy-adventure filled with mystery, intrigue and romance.</p>
+        <div class="book-actions"><button type="button" class="book-btn preview" data-preview data-read-url="https://books.google.com/books?q=intitle:%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%82%E0%A4%A4%E0%A4%BE">Preview</button><a href="https://openlibrary.org/search?q=%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%82%E0%A4%A4%E0%A4%BE" target="_blank" rel="noopener" class="book-btn read">Read →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK PREVIEW MODAL ============ -->
+<div class="book-preview-modal" id="bookPreviewModal" aria-hidden="true">
+  <div class="preview-backdrop" data-close-preview></div>
+  <article class="preview-dialog" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+    <button class="preview-close" id="previewClose" aria-label="Close preview">×</button>
+    <div class="preview-book-art" id="previewBookArt">📖</div>
+    <div class="preview-content">
+      <span class="preview-meta" id="previewMeta"></span>
+      <h2 id="previewTitle">Book title</h2>
+      <p class="preview-author" id="previewAuthor"></p>
+      <p class="preview-summary" id="previewSummary"></p>
+      <div class="preview-note">This is a short abstract preview. Continue to the reading source when you're ready.</div>
+      <div class="preview-actions">
+        <button class="preview-continue" data-close-preview>Keep Browsing</button>
+        <a class="preview-read" id="previewRead" href="#" target="_blank" rel="noopener">Read the Book ↗</a>
+      </div>
+    </div>
+  </article>
+</div>
+
 <!-- ============ EVENTS ============ -->
-<section id="events" class="section section-alt">
+<section id="events" class="section">
   <div class="container">
     <p class="section-label center">Mark Your Calendar</p>
     <h2 class="center">Upcoming &amp; Past <span class="accent">Events</span></h2>
@@ -259,7 +383,7 @@
 </section>
 
 <!-- ============ GALLERY ============ -->
-<section id="gallery" class="section">
+<section id="gallery" class="section section-alt">
   <div class="container">
     <p class="section-label center">Moments</p>
     <h2 class="center">Club <span class="accent">Gallery</span></h2>
@@ -284,7 +408,7 @@
 </div>
 
 <!-- ============ MEMBERSHIP REGISTRATION ============ -->
-<section id="membership" class="section section-alt">
+<section id="membership" class="section">
   <div class="container form-wrap">
     <p class="section-label center">Join Us</p>
     <h2 class="center">Membership <span class="accent">Registration</span></h2>
@@ -378,7 +502,7 @@
 <footer id="contact" class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="logo.jpeg" alt="PROLOGUE logo" class="footer-logo" />
+      <img src="assets/logo.jpeg" alt="PROLOGUE logo" class="footer-logo" />
       <p>PROLOGUE — The Reading Club of LBSITW. Turning pages, turning minds, one chapter at a time.</p>
     </div>
 
@@ -422,6 +546,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

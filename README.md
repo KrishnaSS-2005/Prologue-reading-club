@@ -3,7 +3,7 @@
 A responsive, single-page website for **PROLOGUE**, the official reading club of LBSITW, built for the Tech Team selection task.
 
 ## 🔗 Live Site
-Live Website (GitHub Pages): https://github.com/KrishnaSS-2005/Prologue-reading-club
+Live Website (GitHub Pages): `https://<your-username>.github.io/<your-repo-name>/`
 
 ## 🖥️ Overview
 
@@ -62,7 +62,7 @@ No build tools or dependencies are required.
    python3 -m http.server 8000
    ```
 
-## ☁️ Deploying to GitHub Pages  
+## ☁️ Deploying to GitHub Pages
 
 1. Create a new GitHub repository and push this folder's contents to the `main` branch:
    ```bash
@@ -70,13 +70,13 @@ No build tools or dependencies are required.
    git add .
    git commit -m "Initial commit: PROLOGUE reading club website"
    git branch -M main
-   git remote add origin https://github.com/KrishnaSS-2005/Prologue-reading-club
+   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
    git push -u origin main
    ```
 2. In the repository, go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to `Deploy from a branch`, branch `main`, folder `/ (root)`.
 4. Save — GitHub will publish the site at:
-   https://krishnass-2005.github.io/Prologue-reading-club/
+   `https://<your-username>.github.io/<your-repo-name>/`
 
 ## ✅ Requirements Checklist
 
@@ -89,6 +89,6 @@ No build tools or dependencies are required.
 
 ---
 
-**Name:** Krishna S S
-**GitHub Repository:** https://github.com/KrishnaSS-2005/Prologue-reading-club
-**Live Website (GitHub Pages):** https://krishnass-2005.github.io/Prologue-reading-club/
+**Name:** _(fill in your name)_
+**GitHub Repository:** _(fill in link)_
+**Live Website (GitHub Pages):** _(fill in link)_

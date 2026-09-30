@@ -5,6 +5,64 @@
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* ---------- Intro screen: Enter / Skip ---------- */
+  const introScreen = document.getElementById("introScreen");
+  const closeIntro = () => {
+    if (!introScreen) return;
+    introScreen.classList.add("hide");
+    document.body.classList.remove("intro-lock");
+    setTimeout(() => { introScreen.remove(); }, 700);
+  };
+  document.body.classList.add("intro-lock");
+  document.getElementById("enterPrologue")?.addEventListener("click", closeIntro);
+  document.getElementById("skipIntro")?.addEventListener("click", closeIntro);
+  setTimeout(closeIntro, 4500);
+
+  /* ---------- Dark / light mode ---------- */
+  const themeToggle = document.getElementById("themeToggle");
+  const applyTheme = (dark) => {
+    document.body.classList.toggle("dark-mode", dark);
+    if (themeToggle) {
+      themeToggle.querySelector("span:first-child").textContent = dark ? "☀" : "☾";
+      themeToggle.querySelector(".theme-label").textContent = dark ? "Light" : "Dark";
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    }
+  };
+  const savedTheme = localStorage.getItem("prologueTheme");
+  applyTheme(savedTheme === "dark");
+  themeToggle?.addEventListener("click", () => {
+    const dark = !document.body.classList.contains("dark-mode");
+    localStorage.setItem("prologueTheme", dark ? "dark" : "light");
+    applyTheme(dark);
+  });
+
+  /* ---------- Library language + favourite genre filters ---------- */
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const bookCards = document.querySelectorAll("#libraryGrid .book-card");
+  const libraryEmpty = document.getElementById("libraryEmpty");
+  const filters = { language: "all", genre: "all" };
+  const updateLibrary = () => {
+    let visible = 0;
+    bookCards.forEach(card => {
+      const languageMatch = filters.language === "all" || card.dataset.language === filters.language;
+      const genreMatch = filters.genre === "all" || card.dataset.genre === filters.genre;
+      const show = languageMatch && genreMatch;
+      card.classList.toggle("filtered-out", !show);
+      if (show) visible++;
+    });
+    libraryEmpty?.classList.toggle("show", visible === 0);
+  };
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const group = btn.dataset.filterGroup;
+      filterButtons.forEach(b => { if (b.dataset.filterGroup === group) b.classList.remove("active"); });
+      btn.classList.add("active");
+      filters[group] = btn.dataset.filter;
+      updateLibrary();
+    });
+  });
+  updateLibrary();
+
 
   /* ---------- Sticky header on scroll ---------- */
   const header = document.getElementById("siteHeader");
@@ -234,5 +292,35 @@ document.addEventListener("DOMContentLoaded", () => {
     fieldsToCheck.forEach((id) => setError(id, ""));
     document.getElementById("err-agree").textContent = "";
   });
+
+  /* ---------- On-site book preview ---------- */
+  const previewModal = document.getElementById("bookPreviewModal");
+  const previewTitle = document.getElementById("previewTitle");
+  const previewAuthor = document.getElementById("previewAuthor");
+  const previewMeta = document.getElementById("previewMeta");
+  const previewSummary = document.getElementById("previewSummary");
+  const previewRead = document.getElementById("previewRead");
+  const previewArt = document.getElementById("previewBookArt");
+  const openPreview = (card) => {
+    if (!previewModal || !card) return;
+    previewTitle.textContent = card.querySelector("h3")?.textContent.trim() || "Book preview";
+    previewAuthor.textContent = card.querySelector(".book-author")?.textContent.trim() || "";
+    previewMeta.textContent = card.querySelector(".book-tag")?.textContent.trim() || "Book";
+    previewSummary.textContent = card.querySelector(".book-blurb")?.textContent.trim() || "Explore this title through the reading source.";
+    previewRead.href = card.querySelector("[data-preview]")?.dataset.readUrl || "#";
+    previewArt.textContent = card.querySelector(".book-cover")?.textContent.trim() || "📖";
+    previewModal.classList.add("open");
+    previewModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("preview-open");
+  };
+  const closePreview = () => {
+    previewModal?.classList.remove("open");
+    previewModal?.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("preview-open");
+  };
+  document.querySelectorAll("[data-preview]").forEach(btn => btn.addEventListener("click", () => openPreview(btn.closest(".book-card"))));
+  document.querySelectorAll("[data-close-preview]").forEach(el => el.addEventListener("click", closePreview));
+  document.getElementById("previewClose")?.addEventListener("click", closePreview);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closePreview(); });
 
 });
