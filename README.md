@@ -3,7 +3,7 @@
 A responsive, single-page website for **PROLOGUE**, the official reading club of LBSITW, built for the Tech Team selection task.
 
 ## 🔗 Live Site
-Live Website (GitHub Pages): `https://<your-username>.github.io/<your-repo-name>/`
+Live Website (GitHub Pages): https://krishnass-2005.github.io/Prologue-reading-club/
 
 ## 🖥️ Overview
 
@@ -76,7 +76,7 @@ No build tools or dependencies are required.
 2. In the repository, go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to `Deploy from a branch`, branch `main`, folder `/ (root)`.
 4. Save — GitHub will publish the site at:
-   `https://<your-username>.github.io/<your-repo-name>/`
+   https://krishnass-2005.github.io/Prologue-reading-club/
 
 ## ✅ Requirements Checklist
 
@@ -89,6 +89,6 @@ No build tools or dependencies are required.
 
 ---
 
-**Name:** _(fill in your name)_
-**GitHub Repository:** _(fill in link)_
-**Live Website (GitHub Pages):** _(fill in link)_
+**Name:** Krishna S S
+**GitHub Repository:** https://github.com/KrishnaSS-2005/Prologue-reading-club
+**Live Website (GitHub Pages):**https://krishnass-2005.github.io/Prologue-reading-club/
