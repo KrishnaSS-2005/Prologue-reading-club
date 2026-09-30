@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("intro-lock");
     setTimeout(() => { introScreen.remove(); }, 700);
   };
-  document.body.classList.add("intro-lock");
-  document.getElementById("enterPrologue")?.addEventListener("click", closeIntro);
-  document.getElementById("skipIntro")?.addEventListener("click", closeIntro);
+  if (introScreen) {
+    document.body.classList.add("intro-lock");
+    document.getElementById("enterPrologue")?.addEventListener("click", closeIntro);
+    document.getElementById("skipIntro")?.addEventListener("click", closeIntro);
+  }
   setTimeout(closeIntro, 4500);
 
   /* ---------- Dark / light mode ---------- */
@@ -77,14 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburgerBtn");
   const mainNav = document.getElementById("mainNav");
 
-  hamburger.addEventListener("click", () => {
+  hamburger?.addEventListener("click", () => {
+    if (!mainNav) return;
     const isOpen = mainNav.classList.toggle("open");
     hamburger.classList.toggle("open", isOpen);
     hamburger.setAttribute("aria-expanded", isOpen);
   });
 
   // Close mobile menu after clicking a link
-  mainNav.querySelectorAll("a").forEach((link) => {
+  mainNav?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("open");
       hamburger.classList.remove("open");
