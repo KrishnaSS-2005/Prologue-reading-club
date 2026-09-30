@@ -308,7 +308,17 @@ document.addEventListener("DOMContentLoaded", () => {
     previewMeta.textContent = card.querySelector(".book-tag")?.textContent.trim() || "Book";
     previewSummary.textContent = card.querySelector(".book-blurb")?.textContent.trim() || "Explore this title through the reading source.";
     previewRead.href = card.querySelector("[data-preview]")?.dataset.readUrl || "#";
-    previewArt.textContent = card.querySelector(".book-cover")?.textContent.trim() || "📖";
+    
+    const coverImg = card.querySelector(".book-cover img");
+    if (coverImg && previewArt) {
+      previewArt.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = coverImg.getAttribute("src") || "";
+      img.alt = coverImg.getAttribute("alt") || "Book cover";
+      previewArt.appendChild(img);
+    } else if (previewArt) {
+      previewArt.textContent = "📖";
+    }
     previewModal.classList.add("open");
     previewModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("preview-open");
